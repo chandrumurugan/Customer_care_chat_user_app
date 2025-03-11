@@ -1,0 +1,170 @@
+{
+  "project_info": {
+    "project_number": "178216866789",
+    "project_id": "hovee-558db",
+    "storage_bucket": "hovee-558db.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:178216866789:android:5f641a9a475671c2d8550c",
+        "android_client_info": {
+          "package_name": "com.example.hovee_customercare"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "178216866789-d8f78unbmfguq8q4rv870607t929ki9u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.hovee_customercare",
+            "certificate_hash": "0315bab2ce9d4b7e05f64e4a6856ffb1949e47ce"
+          }
+        },
+        {
+          "client_id": "178216866789-ra2rmhuvphhra301cplaj8giafbifd8u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBS7a8hQ_y_gAkNm7NfylEdyriREN677js"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "178216866789-e2cguf5uie4jqm6mkrar50qg9iafacpl.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "178216866789-0haririnht6ikst61p73l6b6ol6kb6tj.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.whoWe"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:178216866789:android:0e8df9fef2625751d8550c",
+        "android_client_info": {
+          "package_name": "com.example.hovee_rent_chat_poc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "178216866789-ra2rmhuvphhra301cplaj8giafbifd8u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBS7a8hQ_y_gAkNm7NfylEdyriREN677js"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "178216866789-e2cguf5uie4jqm6mkrar50qg9iafacpl.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "178216866789-0haririnht6ikst61p73l6b6ol6kb6tj.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.whoWe"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:178216866789:android:c47e204c5d5de599d8550c",
+        "android_client_info": {
+          "package_name": "com.example.hovee_rent_chat_poc_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "178216866789-ra2rmhuvphhra301cplaj8giafbifd8u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBS7a8hQ_y_gAkNm7NfylEdyriREN677js"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "178216866789-e2cguf5uie4jqm6mkrar50qg9iafacpl.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "178216866789-0haririnht6ikst61p73l6b6ol6kb6tj.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.whoWe"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:178216866789:android:04366ebe1a30ab4ad8550c",
+        "android_client_info": {
+          "package_name": "com.example.who_we"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "178216866789-hp265712t8g74s9n9fn781thebldj91l.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.who_we",
+            "certificate_hash": "fabd7628fba04d550587648e6f4ac096e5282947"
+          }
+        },
+        {
+          "client_id": "178216866789-ra2rmhuvphhra301cplaj8giafbifd8u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBS7a8hQ_y_gAkNm7NfylEdyriREN677js"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "178216866789-e2cguf5uie4jqm6mkrar50qg9iafacpl.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "178216866789-0haririnht6ikst61p73l6b6ol6kb6tj.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.whoWe"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
