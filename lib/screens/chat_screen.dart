@@ -16,13 +16,45 @@ class _ChatScreenState extends State<ChatScreen> {
   void sendMessage() {
     if (_controller.text.isEmpty) return;
 
-    FirebaseFirestore.instance.collection('chats').doc(widget.chatId).collection('messages').add({
-      'senderId': FirebaseAuth.instance.currentUser!.uid,
-      'message': _controller.text,
-      'timestamp': FieldValue.serverTimestamp(),
-    });
+    FirebaseFirestore.instance
+        .collection('chats')
+        .doc(widget.chatId)
+        .collection('messages')
+        .add({
+          'senderId': FirebaseAuth.instance.currentUser!.uid,
+          'message': _controller.text,
+          'timestamp': FieldValue.serverTimestamp(),
+        });
 
     _controller.clear();
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    sendWelcomeMessage();
+  }
+
+  void sendWelcomeMessage() async {
+    var messages =
+        await FirebaseFirestore.instance
+            .collection('chats')
+            .doc(widget.chatId)
+            .collection('messages')
+            .get();
+
+    if (messages.docs.isEmpty) {
+      FirebaseFirestore.instance
+          .collection('chats')
+          .doc(widget.chatId)
+          .collection('messages')
+          .add({
+            'message': "Hello! How can I assist you?",
+            'senderId': FirebaseAuth.instance.currentUser!.uid,
+            'timestamp': FieldValue.serverTimestamp(),
+          });
+    }
   }
 
   @override
@@ -33,40 +65,50 @@ class _ChatScreenState extends State<ChatScreen> {
         children: [
           Expanded(
             child: StreamBuilder(
-              stream: FirebaseFirestore.instance
-                  .collection('chats')
-                  .doc(widget.chatId)
-                  .collection('messages')
-                  .orderBy('timestamp', descending: false)
-                  .snapshots(),
+              stream:
+                  FirebaseFirestore.instance
+                      .collection('chats')
+                      .doc(widget.chatId)
+                      .collection('messages')
+                      .orderBy('timestamp', descending: false)
+                      .snapshots(),
               builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
-               if (snapshot.connectionState == ConnectionState.waiting) {
-      return Center(child: CircularProgressIndicator());
-    }
-    
-    if (snapshot.hasError) {
-      return Center(child: Text("Error loading messages"));
-    }
+                if (snapshot.connectionState == ConnectionState.waiting) {
+                  return Center(child: CircularProgressIndicator());
+                }
 
-    if (!snapshot.hasData || snapshot.data!.docs.isEmpty) {
-      return Center(child: Text("No messages yet"));
-    }
+                if (snapshot.hasError) {
+                  return Center(child: Text("Error loading messages"));
+                }
+
+                if (!snapshot.hasData || snapshot.data!.docs.isEmpty) {
+                  return Center(child: Text("No messages yet"));
+                }
                 return ListView(
-                  children: snapshot.data!.docs.map((msg) {
-                    bool isMe = msg['senderId'] == FirebaseAuth.instance.currentUser!.uid;
-                    return Align(
-                      alignment: isMe ? Alignment.centerRight : Alignment.centerLeft,
-                      child: Container(
-                        margin: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
-                        padding: EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                          color: isMe ? Colors.blue : Colors.grey[300],
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: Text(msg['message']),
-                      ),
-                    );
-                  }).toList(),
+                  children:
+                      snapshot.data!.docs.map((msg) {
+                        bool isMe =
+                            msg['senderId'] ==
+                            FirebaseAuth.instance.currentUser!.uid;
+                        return Align(
+                          alignment:
+                              isMe
+                                  ? Alignment.centerRight
+                                  : Alignment.centerLeft,
+                          child: Container(
+                            margin: EdgeInsets.symmetric(
+                              vertical: 5,
+                              horizontal: 10,
+                            ),
+                            padding: EdgeInsets.all(10),
+                            decoration: BoxDecoration(
+                              color: isMe ? Colors.blue : Colors.grey[300],
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child: Text(msg['message']),
+                          ),
+                        );
+                      }).toList(),
                 );
               },
             ),
